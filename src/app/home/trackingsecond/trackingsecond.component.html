@@ -1,0 +1,32 @@
+<ion-content>
+  <app-home></app-home>
+<div class="container" style="margin-top: 10%;">
+  <article class="card">
+      <header class="card-header"> Tracking Shipment</header>
+      <div class="card-body" style="height: 330px;">
+          <article class="card">
+              <div class="card-body row">
+                  <div class="col"> <strong>AWB Number:</strong> <br> <input type="text" [(ngModel)]="trackingObj.sAWBno" style="border:none;"> </div>
+                  <div class="col"> <strong>Shipping BY:</strong> <br> DOREX, | <i class="fa fa-phone"></i> 123-456-789 </div>
+                  <div class="col"> <strong>Order Booked Date:</strong> <br><input type="text" [(ngModel)]="trackingObj.dtDate" style="border:none;"> </div>
+                  <!-- <div class="col"> <strong>Status:</strong> <br> <input type="text" [(ngModel)]="trackingObj.sStatus"> </div> -->
+              </div>
+          </article>
+          <div class="track">
+              <div [ngClass]="trackingObj.sStatus==='Pending'||trackingObj.sStatus==='PickUp'||trackingObj.sStatus==='OnTheWay'||trackingObj.sStatus==='Delivered'? 'class1':'class2'"> <span class="icon class1"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+              <div [ngClass]="trackingObj.sStatus==='PickUp'||trackingObj.sStatus==='OnTheWay'||trackingObj.sStatus==='Delivered'? 'class1':'class2'"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+              <div [ngClass]="trackingObj.sStatus==='OnTheWay'||trackingObj.sStatus==='Delivered'? 'class1':'class2'"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+              <div [ngClass]="trackingObj.sStatus==='Delivered'? 'class1':'class2'"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Delivered to customer</span> </div>
+          </div>
+          <div>
+             <button type="button" class=" btn btn1" (click)="back()"><i class="fa fa-chevron-left"></i>
+            Back to Tracking</button>
+             <button type="button" class=" btn btn1" style="margin-left: 38%;" (click)="feedback()"><i class="fa fa-chevron-right"></i>
+              Give Feedback</button>
+            <button type="button" class=" btn btn1" style="margin-left:3%;" (click)="complaint()"><i class="fa fa-chevron-right"></i>
+              Compliant Form</button>
+          </div>
+      </div>
+  </article>
+</div>
+</ion-content>

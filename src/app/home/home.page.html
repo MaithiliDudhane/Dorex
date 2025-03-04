@@ -1,0 +1,19 @@
+  
+  <nav>
+    <div class="wrapper">
+      <div class="logo"><a (click)="dashboard()">Dorex</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a (click)="home()" style="cursor: pointer;">Home</a></li>
+        <li><a (click)="aboutus()" style="cursor: pointer;">About Us</a></li>
+        <li><a (click)="splitservices()" style="cursor: pointer;">Services</a></li>
+        <li><a (click)="Contact()" style="cursor: pointer;">Contact Us</a></li>
+        
+        <button type="button" class="btn1" (click)="track()">Track Shippment</button>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+  <!-- <ion-router-outlet></ion-router-outlet> -->

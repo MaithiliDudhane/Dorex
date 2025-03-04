@@ -1,0 +1,107 @@
+
+
+<ion-content [fullscreen]="true">
+  <app-home></app-home>
+  <div class="container-fluid" style="height: 100vh;background-color: white;">
+    <div class=" text-center mt-5 ">
+  
+      <h1 style="margin-top: 8%;">Complaint Form</h1>
+  
+  
+    </div>
+  
+  
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+          <div class="card-body bg-light">
+  
+            <div class="container">
+              <form [formGroup]="makecomplaintValidation" id="contact-form" role="form">
+  
+  
+  
+                <div class="controls">
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_name">AWBNo</label>
+                        <input [(ngModel)]="makecomplaintOfUserObj.sAWBno" formControlName="sAWBno"id="form_name" type="text" name="sFirstname" class="form-control"
+                          placeholder="Please enter your firstname *" required="required"
+                          data-error="Firstname is required.">
+                         
+  
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_lastname">Fullname</label>
+                        <input [(ngModel)]="makecomplaintOfUserObj.sFullname" formControlName="sFullname" id="form_lastname" type="text" name="sLastname" class="form-control"
+                          placeholder="Please enter your lastname *" required="required"
+                          data-error="Lastname is required.">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_email">Email</label>
+                        <input [(ngModel)]="makecomplaintOfUserObj.sEmail" formControlName="sEmail" id="form_email" type="email" name="sEmail" class="form-control"
+                          placeholder="Please enter your email *" required="required"
+                          data-error="Valid email is required.">
+  
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_need">Please specify your need</label>
+                        <select [(ngModel)]="makecomplaintOfUserObj.sReason" formControlName="sReason" id="form_need" name="sReason" class="form-control" required="required"
+                          data-error="Please specify your need.">
+                          <option value="" selected disabled>--Select Your Issue--</option>
+                          <option>Inconvenient delivery times</option>
+                          <option>Parcels left in unsecure locations</option>
+                          <option>Parcels Received by Strangers</option>
+                          <option>Other</option>
+                        </select>
+  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="form_message">Message</label>
+                        <textarea [(ngModel)]="makecomplaintOfUserObj.sMessage" formControlName="sMessage" id="form_message" name="sMessage" class="form-control"
+                          placeholder="Write your message here." rows="4" required="required"
+                          data-error="Please, leave us a message."></textarea>
+                      </div>
+  
+                    </div>
+  
+  
+                    <div class="col-md-12">
+  
+                      <button type="button" class="btn2" [disabled]="!makecomplaintValidation.valid" (click)="makecomplaint()">Send Message</button>
+  
+                    </div>
+  
+                  </div>
+  
+  
+                </div>
+              </form>
+            </div>
+          </div>
+  
+  
+        </div>
+        <!-- /.8 -->
+  
+      </div>
+      <!-- /.row-->
+  
+    </div>
+  </div>
+  
+</ion-content>

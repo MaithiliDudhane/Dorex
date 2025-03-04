@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <app-home></app-home>
+  <section class="backgroundcolor">
+
+ <div class="wrapper" >
+   
+      <div class="form-box">
+          <h2>Login</h2>
+        <form [formGroup]="loginValidation" >
+          <div class="input-box">
+            <span class="icon">
+                <ion-icon name="call-outline"></ion-icon>
+            </span>
+            <input [(ngModel)]="loginOfUserObj.sMobileNo" formControlName="sMobileNo" name="sMobileNo" type="number" >
+              <label>Mobile No</label>
+              
+        </div>  
+          <div class="input-box">
+              <span class="icon">
+                <ion-icon name="lock-closed"></ion-icon>
+              </span>
+              <input [(ngModel)]="loginOfUserObj.sPassword" formControlName="sPassword" name="sMobileNo" type="password" >
+              <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <!-- <label><input type="checkbox" style="accent-color: #036b6b;">Remember me</label> -->
+            <a (click)="forgotPassword()" style="cursor: pointer;">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn" (click)="login()" [disabled]="!loginValidation.valid"><b>Login</b></button>
+          
+        </form>
+      </div>
+    </div>
+    </section>
+   
+<!-- </ion-content> -->
+  </ion-content>
+  
+
+

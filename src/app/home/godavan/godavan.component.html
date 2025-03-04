@@ -1,0 +1,102 @@
+
+
+<ion-content [fullscreen]="true">
+  <app-home></app-home>
+  <div class="container-fluid" style="height: 100vh;background-color: white;">
+    <div class=" text-center mt-5 ">
+  
+      <h1 style="margin-top: 8%;">Godavan Details</h1>
+  
+  
+    </div>
+  
+  
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+          <div class="card-body bg-light">
+  
+            <div class="container">
+              <form [formGroup]="godavanValidation" id="contact-form" role="form">
+  
+  
+  
+                <div class="controls">
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_lastname">Godavan Id</label>
+                        <input [(ngModel)]="godavanObj.sGodavanId" formControlName="sGodavanId" id="form_lastname" type="text" name="sLastname" class="form-control"
+                          placeholder="Please enter your Godavan Name *" required="required"
+                          data-error="Godavan Name is required.">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_lastname">Godavan Name</label>
+                        <input [(ngModel)]="godavanObj.sGodavanName" formControlName="sGodavanName" id="form_lastname" type="text" name="sGodawanName" class="form-control"
+                          placeholder="Please enter your Godavan Name *" required="required"
+                          data-error="Godavan Name is required.">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_email">City</label>
+                        <input [(ngModel)]="godavanObj.sCity" formControlName="sCity" id="form_email" type="text" name="sCity" class="form-control"
+                          placeholder="Please enter your City *" required="required"
+                          data-error="Valid City is required.">
+  
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="form_email">Contact No</label>
+                        <input [(ngModel)]="godavanObj.sMobileNo" formControlName="sMobileNo" id="form_email" type="tel" name="sMobileNo" class="form-control"
+                          placeholder="Please enter your Mobile NO *" required="required"
+                          data-error="Valid Mobile No is required.">
+  
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="form_message">Address</label>
+                        <textarea [(ngModel)]="godavanObj.sAddress" formControlName="sAddress" id="form_message" name="sAddress" class="form-control"
+                          placeholder="Write your Address here." rows="4" required="required"
+                          data-error="Please, leave us a Address."></textarea>
+                      </div>
+  
+                    </div>
+  
+  
+                    <div class="col-md-12">
+  
+                      <button type="button" class="btn2" [disabled]="!godavanValidation.valid" (click)="addGodavan()">Add Godavan</button>
+  
+                    </div>
+  
+                  </div>
+  
+  
+                </div>
+              </form>
+            </div>
+          </div>
+  
+  
+        </div>
+        <!-- /.8 -->
+  
+      </div>
+      <!-- /.row-->
+  
+    </div>
+  </div>
+  
+</ion-content>

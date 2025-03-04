@@ -1,0 +1,254 @@
+<ion-content [fullscreen]="true">
+  <app-home></app-home>
+  <div style="background-color:white">
+    <div class="row">
+      <!-- First Half -->
+    <div class="col-md-5"  style="border: 2px solid #036b6b;width: 10%;background-color:aliceblue; margin-left:0%;margin-bottom: 0%; ">
+      <div class="row">
+      
+      <div class="leftside">
+        <ion-header  >
+          
+          <ion-toolbar >
+            <ion-searchbar [(ngModel)]="searchData"></ion-searchbar>
+          </ion-toolbar>
+        </ion-header>
+          <ion-card class="AWBNumber" *ngFor="let x of viewshippment|search:{sAWBno:searchData,dtDate:searchData};let i=index" (click)="select(x)">
+              <ion-card-header>
+              <ion-card-title style="color: rgb(4, 12, 19); cursor:pointer;">{{x.sAWBno}}</ion-card-title>
+               </ion-card-header>
+              <ion-card-content style="color: rgb(4, 12, 19);">
+               
+                Date : {{x.dtDate}}
+              </ion-card-content>
+          </ion-card>
+<!--          
+                <ion-card class="AWBNumber">
+                  <ion-card-header>
+                  <ion-card-title style="color: aliceblue; cursor:pointer;">F12456</ion-card-title>
+                   </ion-card-header>
+                  <ion-card-content>
+                   
+                    Date : 26-8-2003
+                  </ion-card-content>
+              </ion-card>
+        <ion-card class="AWBNumber">
+                <ion-card-header>
+                <ion-card-title style="color: aliceblue; cursor:pointer;">F12456</ion-card-title>
+                 </ion-card-header>
+                <ion-card-content>
+                 
+                  Date : 26-8-2003
+                </ion-card-content>
+            </ion-card>
+        <ion-card class="AWBNumber">
+              <ion-card-header>
+              <ion-card-title style="color: aliceblue;cursor:pointer;">F12345</ion-card-title>
+               </ion-card-header>
+              <ion-card-content>
+               
+                Date : 26-8-2003
+              </ion-card-content>
+          </ion-card> -->
+  
+      </div>    
+  </div>
+      
+    </div>
+    <!-- Second Half -->
+    <div class="col-md-7" style="margin-bottom: 0%;">
+      <div class="rightside">
+        <div class="container-fluid" style="background-color: white; margin-top:25px">
+          <div class=" text-center mt-5 ">
+        
+              
+                  
+              
+          </div>
+        
+        
+        <div class="row" style="margin-top:20%;margin-left:10%">
+          <div class="col-md-12">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+          
+                <div class = "container">
+                  <form id="contact-form" role="form">
+                      <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname" ><b>AWBNumber</b></label>
+                                    <input [(ngModel)]="viewallshippmentOfUserObj.sAWBno" [disabled]="true" id="form_lastname" type="text" name="AWBNumber" class="form-control"  >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_lastname" ><b>Source</b></label>
+                                      <input [(ngModel)]="viewallshippmentOfUserObj.sSource" [disabled]="true" id="form_lastname" type="text" name="source" class="form-control" >
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="form_destination" ><b>Destination</b></label>
+                                  <input style="height: 80px;"  [(ngModel)]="viewallshippmentOfUserObj.sDestination" [disabled]="true" id="form_destination" type="text" name="destination" class="form-control" >
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_volume"><b>Volume</b></label>
+                                    <input [(ngModel)]="viewallshippmentOfUserObj.dVolume" [disabled]="true" id="form_volume" type="text" name="volume" class="form-control"  >
+                                </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_Weight"><b>Weight</b></label>
+                                <input [(ngModel)]="viewallshippmentOfUserObj.dWeight" [disabled]="true" id="form_Weight" type="text" name="weight" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="form_Weight"><b>Status</b></label>
+                              <input [(ngModel)]="viewallshippmentOfUserObj.sStatus" [disabled]="true" id="form_Weight" type="text" name="sStatus" class="form-control" >
+                          </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <label for="ShippmentType" > <b>Shippment Type :</b> </label>
+                        </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <input [(ngModel)]="viewallshippmentOfUserObj.sShippmentType" [disabled]="true" type="radio" id="Road" name="sShippmentType" value="Road" >
+                               <label for="Road" ><b>Road</b></label>
+                          </div>
+                          <div class="col-md-4">
+                            <input [(ngModel)]="viewallshippmentOfUserObj.sShippmentType" [disabled]="true" type="radio" id="Airplane" name="sShippmentType" value="Airplane"  >
+                               <label for="Airplane"  ><b>Airplane</b></label>
+                          </div>
+                          <div class="col-md-4">
+                            <input [(ngModel)]="viewallshippmentOfUserObj.sShippmentType" [disabled]="true" type="radio" id="Sea" name="sShippmentType" value="Sea" >
+                               <label for="Sea"  ><b>Sea</b></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="ShippmentType" > <b>Priority :</b> </label>
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <input [(ngModel)]="viewallshippmentOfUserObj.sPriority" [disabled]="true" type="radio" id="One" name="sPriority" value="One"  >
+                                 <label for="One" ><b>1 Day</b></label>
+                            </div>
+                            <div class="col-md-3">
+                              <input [(ngModel)]="viewallshippmentOfUserObj.sPriority" [disabled]="true" type="radio" id="Two" name="sPriority" value="Two"  >
+                                 <label for="Two"  ><b>2 Day</b></label>
+                            </div>
+                            <div class="col-md-3">
+                              <input [(ngModel)]="viewallshippmentOfUserObj.sPriority" [disabled]="true" type="radio" id="Sea" name="sPriority" value="Four"  >
+                                 <label for="Four"  ><b>4 Day</b></label>
+                            </div>
+                            <div class="col-md-3">
+                              <input [(ngModel)]="viewallshippmentOfUserObj.sPriority" [disabled]="true" type="radio" id="Eight" name="sPriority" value="Eight"  >
+                                 <label for="Eight" ><b>8 Day</b></label>
+                            </div>
+                          </div>
+                        
+                          <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_SenderName" ><b>Sender Name </b></label>
+                                    <input [(ngModel)]="viewallshippmentOfUserObj.sSenderName" [disabled]="true" id="form_SenderName" type="text" name="sSenderName" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="form_SenderMobileNo" ><b>Sender Mobile No</b></label>
+                                      <input [(ngModel)]="viewallshippmentOfUserObj.sSenderMobileNo" [disabled]="true" id="form_SenderMobileNo" type="text" name="sSenderMobileNo" class="form-control" >
+                                  </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="form_ReceiverName" ><b>Receiver Name</b></label>
+                                  <input [(ngModel)]="viewallshippmentOfUserObj.sReciverName" [disabled]="true" id="form_ReceiverName" type="text" name="sReciverName" class="form-control"  >
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_ReceiverMobileNo" ><b>Receiver Mobile No</b></label>
+                                    <input [(ngModel)]="viewallshippmentOfUserObj.sReciverMobileNo" [disabled]="true" id="form_ReceiverMobileNo" type="text" name="sReciverMobileNo" class="form-control" >
+                                </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_ReceiverName" ><b>Sender EmailId</b></label>
+                                <input id="form_ReceiverName" [(ngModel)]="viewallshippmentOfUserObj.sSenderEmail"  type="text" name="SenderEmail" class="form-control" placeholder="Sender Email Id" required="required" data-error="Sender Email Id is required." >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="form_ReceiverMobileNo" ><b>Receiver EmailId</b></label>
+                                  <input id="form_ReceiverMobileNo" [(ngModel)]="viewallshippmentOfUserObj.sReceiverEmail"  type="text" name="ReceiverEmail" class="form-control" placeholder="Receiver Email Id" required="required" data-error=" Receiver Email Id is required.">
+                              </div>
+                        </div>
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button type="cost" [disabled]="true" class="btn" style="margin-top:10%;width:150px;height:40px"><b>Cost</b></button>
+                        </div>
+                        <div class="col-md-6">
+                            <input [(ngModel)]="viewallshippmentOfUserObj.dtotalcost" [disabled]="true" id="Totalcost" class="form-control" name="dtotalcost" type="text" size="15%" style="margin-top:10%;width:150px;height:35px;margin-left: 2%;"  /><br>
+                        </div>
+                        <!-- <div class="row">
+                          
+                            <button *ngIf="Flag===true"  (click)="cancel()" style="height:40px; float:right;background-color:#036b6b;border-radius:5px;color:white;">Cancel Shippment</button>
+                            </div> -->
+                            
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <button type="cost"  class="btn" style="margin-top:10%;width:150px;height:40px;" *ngIf="status==='Pending'" (click)="updateStatus('PickUp')"><b>PickUp </b></button>
+                        </div>
+                        <div class="col-md-4">
+                          <button type="cost" class="btn" style="margin-top:10%;width:150px;height:40px;margin-left:10px" *ngIf="status==='PickUp'" (click)="updateStatus('OnTheWay')"><b>OnTheWay</b></button>
+                        </div>
+                        <div class="col-md-4">
+                          <button type="cost"  class="btn" style="margin-top:10%;width:150px;height:40px;margin-right:5px" *ngIf="status==='OnTheWay'" (click)="updateStatus('Delivered')"><b>Delivered</b></button>
+                        </div>
+                      </div>
+                    
+
+                      
+          </div>
+            
+            </form>
+            </div>
+                </div>
+          
+          
+          </div>
+            <!-- /.8 -->
+          
+          </div>
+        <!-- /.row-->
+        
+        </div>
+        </div>
+        
+      
+      </div>
+    </div> 
+  </div>
+  </div> 
+</ion-content>

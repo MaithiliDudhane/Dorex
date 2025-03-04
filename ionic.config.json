@@ -1,0 +1,7 @@
+{
+  "name": "SplitScreenApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

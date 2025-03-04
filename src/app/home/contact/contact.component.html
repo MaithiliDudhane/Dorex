@@ -1,0 +1,77 @@
+<ion-content>
+  <app-home></app-home>
+
+  <div class="container" style="margin-left: 20%; margin-top:5%">
+    <span class="big-circle"></span>
+    <img src="shape.png" class="square" alt="" />
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <div class="info">
+          <div class="information">
+            <img src="location.png" class="icon" alt="" />
+            <p>DOREX ,Ichalkaranji-416115</p>
+          </div>
+          <div class="information">
+            <img src="email.png" class="icon" alt="" />
+            <p>Dorex&#64;gmail.com</p>
+          </div>
+          <div class="information">
+            <img src="phone.png" class="icon" alt="" />
+            <p>123-456-789</p>
+          </div>
+        </div>
+
+        <div class="social-media">
+          <p>Connect with us :</p>
+          <div class="social-icons">
+            <a href="#">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="#">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+
+        <form  id="contact-form" role="form" [formGroup]="contactusValidation">
+          <h3 class="title">Contact us</h3>
+          <div class="input-container">
+            <input type="text"  [(ngModel)]="contactusOfUserObj.sName" formControlName="sName" placeholder="Name"  name="name" class="input" />
+            <!-- <label for="">Username</label> -->
+            <!-- <span>Username</span> -->
+          </div>
+          <div class="input-container">
+            <input type="email" [(ngModel)]="contactusOfUserObj.sEmail" formControlName="sEmail" name="email" class="input" placeholder="Email" />
+            <!-- <label for="">Email</label> -->
+            <!-- <span>Email</span> -->
+          </div>
+          <div class="input-container">
+            <input type="tel" [(ngModel)]="contactusOfUserObj.sMobileNo" formControlName="sMobileNo" name="mobileNo" class="input" placeholder="Mobile No"/>
+            <!-- <label for="">Phone</label> -->
+            <!-- <span>Phone</span> -->
+          </div>
+          <div class="input-container textarea">
+            <textarea  [(ngModel)]="contactusOfUserObj.sMessage" formControlName="sMessage" name="message" class="input" placeholder="Message"></textarea>
+            <!-- <label for="">Message</label> -->
+            <!-- <span>Message</span> -->
+          </div>
+          <input type="submit" value="Send" class="btn" (click)="contactus()" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

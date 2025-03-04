@@ -1,0 +1,102 @@
+<ion-content [fullscreen]="true">
+  <app-home></app-home>
+  <section class="backgroundcolor">
+ <div class="wrapper" style="margin-top: 5%;" >
+      
+        <div class="form-box">
+            <h2>Registration</h2>
+          <form [formGroup]="registrationValidation">
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                    </span>
+               
+                <input [(ngModel)]="registrationOfUserObj.sName" formControlName="sName" type="text" required>
+                  <label>Name</label>
+            </div>  
+            <div class="input-box">
+                <span class="icon">
+                  <ion-icon name="mail"></ion-icon>
+                </span>
+                <input [(ngModel)]="registrationOfUserObj.sEmailId" formControlName="sEmailId" type="text" required>
+                  <label>Email</label>
+            </div> 
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="call-outline"></ion-icon>
+                </span>
+                <input [(ngModel)]="registrationOfUserObj.sMobileNo" formControlName="sMobileNo" type="text" required>
+                  <label>Mobile No</label>
+            </div>  
+            <div class="input-box">
+                <span class="icon">
+                
+                    <ion-icon name="document-outline"></ion-icon>
+                    </span>
+                
+                <input [(ngModel)]="registrationOfUserObj.sAddress" formControlName="sAddress" type="text" required>
+                <label>Address</label>
+            </div>
+
+          <div class="input-box-gender">
+              
+              
+              <label for="Gender-select" style="color:#036b6b;font-size:17px;">Choose a Gender</label>
+            <div style="float:right;">
+                <select [(ngModel)]="registrationOfUserObj.sGender" formControlName="sGender" name="gender" id="gender-select" style="float:right;border-color: #036b6b;border: solid#036b6b;">
+                      <option value="">--Please choose an option--</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+
+                </select>
+            </div>
+
+          </div>
+          <div style="border-bottom: 2px solid #036b6b;margin-bottom:5px;"></div>
+              <div class="input-box-gender">
+                  <label for="Role-select" style="color:#036b6b;font-size:17px;">Choose a Role</label>
+                  <div style="float: right;">
+                          <select [(ngModel)]="registrationOfUserObj.sRole" formControlName="sRole" name="role" id="role-select" style="float:right; border-color: #036b6b;border: solid#036b6b;">
+                              <option value="">--Please choose an option--</option>
+                              <option value="Admin">Admin</option>
+                              <option value="Opearator">Opearator</option>
+                              <option value="Supervisor">Supervisor</option>
+            
+                          </select>  
+                  </div>
+              </div>
+                
+         <div style="border-bottom: 2px solid #036b6b;margin-bottom:5px;"></div>
+         
+         <br><label style="float:left; color:#036b6b">Date of Joining </label> <input [(ngModel)]="registrationOfUserObj.dtDateOfJoining" formControlName="dtDateOfJoining" type = "date" style="float:right; border-color:#036b6b; border: solid#036b6b;"><br><br>
+         <br>
+         <div style="border-bottom: 2px solid #036b6b;margin-bottom:5px;"></div>
+          <div class="input-box">
+            <span class="icon">
+            
+              <ion-icon name="lock-closed-outline"></ion-icon>
+                </span>
+            
+            <input [(ngModel)]="registrationOfUserObj.sPassword" formControlName="sPassword" type="password" required>
+            <label>Password</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+          
+            <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+          
+          <input [(ngModel)]="registrationOfUserObj.sConfirmPassword" formControlName="sConfirmPassword" type="password" required>
+          <label>Confirm Password</label>
+      </div>
+            
+            <button type="submit" class="btn" (click)="register()" [disabled]="!registrationValidation.valid"><b>Register</b></button>
+            
+          </form>
+        </div>
+      </div>
+    
+   </section> 
+  
+</ion-content>

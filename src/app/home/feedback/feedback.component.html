@@ -1,0 +1,154 @@
+<ion-content [fullscreen]="true">
+	<app-home></app-home>
+	<div style="background-color:white">
+	  <div class="row" style="margin-bottom: 5%">
+		<!-- First Half -->
+		<div class="col-lg-4" style="border: 2px solid black;border-left: none;border-top: none;border-bottom: none;
+		width: 20%; margin-bottom: 0%;height: 200vh; ">
+		  <div class="row" style="margin-top: 15%;">
+			<div class="col-lg-12">
+			  <div class="leftside" style="margin-top: 15%;margin-left: 1.5%;">
+				<div style="margin-top: 15%;">
+  
+				  <ion-card>
+					<ion-card-header>
+					  <ion-card-title>View Feedbaks</ion-card-title>
+					  <ion-card-subtitle>Feedback Details</ion-card-subtitle>
+					</ion-card-header>
+  
+					<ion-card-content>
+					  <ion-list>
+						<ion-item style="font-size: 20px;" *ngFor="let x of feedback;let i=index" (click)="select(x)">
+						  <ion-thumbnail slot="start">
+							<img alt="Silhouette of mountains" src="assets/img/3.png" style="border-radius: 80%;" />
+						  </ion-thumbnail>
+						  <ion-label style="cursor:pointer">{{x.sEmail}}</ion-label>
+						</ion-item>
+  
+						<!-- <ion-item style="font-size: 20px;">
+						  <ion-thumbnail slot="start">
+							<img alt="Silhouette of mountains" src="assets/img/3.png" style="border-radius: 80%;" />
+						  </ion-thumbnail>
+						  <ion-label>Item</ion-label>
+						</ion-item>
+  
+						<ion-item style="font-size: 20px;">
+						  <ion-thumbnail slot="start">
+							<img alt="Silhouette of mountains" src="assets/img/3.png" style="border-radius: 80%;" />
+						  </ion-thumbnail>
+						  <ion-label>Item</ion-label>
+						</ion-item> -->
+  
+  
+					  </ion-list>
+					</ion-card-content>
+				  </ion-card>
+				</div>
+			  </div>
+			</div>
+  
+		  </div>
+  
+		</div>
+		<!-- Second Half -->
+		<div class="col-lg-8" style="margin-bottom: 0%;">
+		  <div class="rightside">
+			<div class="container-fluid" style="height: 100vh;background-color: white;">
+			  <div class=" text-center mt-5 ">
+  
+				<h1 style="margin-top: 8%;">Feedback Form</h1>
+  
+  
+			  </div>
+  
+  
+			  <div class="row ">
+				<div class="col-lg-7 mx-auto">
+				  <div class="card mt-2 mx-auto p-4 bg-light" style="width: 120%;">
+					<div class="card-body bg-light">
+  
+					  <div class="container">
+						<form id="contact-form" role="form">
+  
+  
+  
+						  <div class="controls">
+  
+							<div class="row">
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="form_name">AWBNo</label>
+								  <input [(ngModel)]="feedbackOfUserObj.sAWBno" [disabled]="true" id="form_name" type="text" name="name" class="form-control">
+  
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="form_lastname">Fullname</label>
+								  <input [(ngModel)]="feedbackOfUserObj.sFullname" [disabled]="true" id="form_lastname" type="text" name="surname" class="form-control">
+								</div>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="form_email">Email</label>
+								  <input  [(ngModel)]="feedbackOfUserObj.sEmail" [disabled]="true" id="form_email" type="email" name="email" class="form-control">
+  
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="form_need">Mobile Number</label>
+								  <input [(ngModel)]="feedbackOfUserObj.sMobileNo" [disabled]="true" id="form_mobile" type="mobile" name="mobile" class="form-control">
+  
+  
+								</div>
+							  </div>
+							  <div class="col-md-6">
+								<div class="form-group">
+								  <label for="form_need">Satiesfy with our service's</label>
+								  <select [(ngModel)]="feedbackOfUserObj.sSatiesfy" [disabled]="true" id="form_need" name="need" class="form-control">
+									<option>Yes</option>
+									<option>No</option>
+								  </select>
+  
+								</div>
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="col-md-12">
+								<div class="form-group">
+								  <label for="form_message">Suggestions</label>
+								  <textarea [(ngModel)]="feedbackOfUserObj.sSuggestions"  [disabled]="true" id="form_suggestion" name="suggestions" class="form-control"></textarea>
+								</div>
+  
+							  </div>
+  
+  
+  
+							</div>
+  
+  
+						  </div>
+						</form>
+					  </div>
+					</div>
+  
+  
+				  </div>
+				  <!-- /.8 -->
+  
+				</div>
+				<!-- /.row-->
+  
+			  </div>
+			</div>
+  
+  
+		  </div>
+		</div>
+	  </div>
+  
+	</div>
+  </ion-content>

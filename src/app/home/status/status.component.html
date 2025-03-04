@@ -1,0 +1,89 @@
+<div class="container-fluid" style="height: 100vh;background-color: white;">
+  <div class=" text-center mt-5 ">
+
+      <h1 style="margin-top: 8%;">Select City</h1>
+
+  </div>
+
+  <div class="row ">
+      <div class="col-lg-7 mx-auto">
+          <div class="card mt-2 mx-auto p-4 bg-light">
+              <div class="card-body bg-light">
+
+                  <div class="container">
+                      <form id="contact-form" role="form">
+
+                          <div class="controls">
+
+                              <div class="row">
+
+                                  <div class="col-md-6">
+                                      <label for="form_name">Select City</label><br>
+                                      <ion-select class="form-control"  cancelText="Cancle" okText="Okay!" [(ngModel)]="obj.sCity"  name="sAWBno"  >  
+                                        <ion-select-option class="text" *ngFor="let x of godowns" value="{{x.sCity}}">{{x.sCity}}</ion-select-option>  
+                                        <!-- <ion-select-option value="lily">Lily</ion-select-option>  
+                                        <ion-select-option value="rose">Rose</ion-select-option>  
+                                        <ion-select-option value="lotus">Lotus</ion-select-option>  
+                                        <ion-select-option value="jasmine">Jasmine</ion-select-option>  
+                                        <ion-select-option value="marigold ">Marigold</ion-select-option>   -->
+                                      </ion-select>  
+                                      <!-- <select name="City" size="10" style="height: 198px;width: 285px;"  
+                                      [(ngModel)]="myDropDown" (ngModelChange)="onChangeofOptions($event)">
+                                          <option value="Akola">Akola</option>
+                                          <option value="Ahmednagar">Ahmednagar</option>
+                                          <option value="Amravati">Amravati</option>
+                                          <option value="Akalkot">Akalkot</option>
+                                          <option value="Barsi">Barsi</option>
+                                          <option value="Badlapur">Badlapur</option>
+                                          <option value="Chandigadh">Chandigadh</option>
+                                          <option value="Chandoli">Chandoli</option>
+                                          <option value="Devgad">Devgad</option>
+                                          <option value="Dule">Dule</option>
+                                          <option value="Delhi">Delhi</option>
+                                          <option value="Ichalkaranji">Ichalkaranji</option>
+                                          <option value="Jalgav">Jalgav</option>
+                                          <option value="Jalna">Jalna</option>
+                                          <option value="Kolhapur">Kolhapur</option>
+                                          <option value="Kalyan-dombivli">Kalyan-dombivli</option>
+                                          <option value="Latur">Latur</option>
+                                          <option value="Mumbai">Mumbai</option>
+                                          <option value="Miraj">Miraj</option>
+                                          <option value="Mysore">Mysore</option>
+                                          <option value="Nashik">Nashik</option>
+                                          <option value="Nagapur">Nagpur</option>
+                                          <option value="Nanded">Nanded</option>
+                                          <option value="Pune">Pune</option>
+                                          <option value="Panvel">Panvel</option>
+                                          <option value="Parbhani">Parbhani</option>
+                                          <option value="Ratnagiri">Ratnagiri</option>
+                                          <option value="Sangli">Sangli</option>
+                                          <option value="Satara">Satara</option>
+                                          <option value="Solhapur">Solhapur</option>
+                                          <option value="Shirdi">Shirdi</option>
+                                          <option value="Thane">Thane</option>
+                                          <option value="Ulhasnagar">Ulhasnagar</option>
+                                          <option value="Vasai-virar">Vasai-virar</option>
+                                      </select> -->
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="form_name">Selected City</label>
+                                          <input id="form_name" type="text" name="name" class="form-control" [(ngModel)]="obj.sCity">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row" style="margin-top: 40px;">
+                                  <div class="col-md-12">
+                                      <button type="button" class="btn2" (click)="addCity()">Add</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <!-- /.8 -->
+      </div>
+      <!-- /.row-->
+  </div>
+</div>
