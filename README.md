@@ -15,3 +15,8 @@ This application processes shipment invoices by scanning images of records (bill
 ✅ Secure database storage for shipment records.  
 ✅ Quick search functionality to retrieve records using an ID.  
 ✅ Improved data accessibility and reduced paperwork.  
+
+##Technologies Used
+*Frontend:* Ionic Framework, Angular, HTML, CSS, JavaScript, TypeScript
+*Backend:* PHP
+*Database:* XAMPP Server (MySQL)
